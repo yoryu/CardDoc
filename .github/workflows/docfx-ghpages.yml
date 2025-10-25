@@ -30,6 +30,19 @@ jobs:
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '9.0.x'
+          # enable built-in NuGet caching
+          cache: 'nuget'
+
+      - name: Cache NuGet packages and dotnet tools
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.nuget/packages
+            ${{ env.HOME }}/.dotnet/tools
+          # key changes when csproj files change
+          key: ${{ runner.os }}-nuget-tools-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-tools-
 
       - name: Install DocFX (global tool)
         run: |
