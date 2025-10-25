@@ -1,0 +1,53 @@
+name: Build DocFX and deploy to gh-pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout CardDoc
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Checkout CardNet (optional)
+        uses: actions/checkout@v4
+        with:
+          repository: yoryu/CardNet
+          path: CardNet
+          # If CardNet is private, set token: ${{ secrets.PERSONAL_TOKEN }}
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Install DocFX (global tool)
+        run: |
+          dotnet tool install -g docfx --version 2.78.4 || true
+          echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
+
+      - name: DocFX metadata
+        run: |
+          cd ${{ github.workspace }}
+          docfx metadata docfx.json
+
+      - name: DocFX build
+        run: |
+          cd ${{ github.workspace }}
+          docfx build docfx.json
+
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
