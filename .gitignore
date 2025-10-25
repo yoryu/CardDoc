@@ -1,0 +1,29 @@
+# Build outputs
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider/IDE
+.idea/
+*.iml
+
+# Node / others
+node_modules/
+dist/
+
+# Misc
+.vscode/
+*.log
+.DS_Store
+
+# Ignore ASP.NET publish/wwwroot folders
+**/wwwroot/
+wwwroot/
