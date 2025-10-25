@@ -1,0 +1,47 @@
+{
+  "CardNet/README.html": {
+    "href": "CardNet/README.html",
+    "title": "CardNet | Cardinn2",
+    "summary": "CardNet"
+  },
+  "README.html": {
+    "href": "README.html",
+    "title": "CardDoc | Cardinn2",
+    "summary": "CardDoc"
+  },
+  "api/Core.Class1.html": {
+    "href": "api/Core.Class1.html",
+    "title": "Class Class1 | Cardinn2",
+    "summary": "Class Class1 Namespace Core Assembly Core.dll public class Class1 Inheritance object Class1 Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString()"
+  },
+  "api/Core.html": {
+    "href": "api/Core.html",
+    "title": "Namespace Core | Cardinn2",
+    "summary": "Namespace Core Classes Class1"
+  },
+  "api/Data.Class1.html": {
+    "href": "api/Data.Class1.html",
+    "title": "Class Class1 | Cardinn2",
+    "summary": "Class Class1 Namespace Data Assembly Data.dll public class Class1 Inheritance object Class1 Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.MemberwiseClone() object.ReferenceEquals(object, object) object.ToString()"
+  },
+  "api/Data.html": {
+    "href": "api/Data.html",
+    "title": "Namespace Data | Cardinn2",
+    "summary": "Namespace Data Classes Class1"
+  },
+  "getting-started.html": {
+    "href": "getting-started.html",
+    "title": "Getting Started | Cardinn2",
+    "summary": "Getting Started"
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "This is the HOMEPAGE. | Cardinn2",
+    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+  },
+  "introduction.html": {
+    "href": "introduction.html",
+    "title": "Introduction | Cardinn2",
+    "summary": "Introduction"
+  }
+}

@@ -1,0 +1,27 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Core
+  name: Core
+  href: api/Core.html
+  commentId: N:Core
+  fullName: Core
+  nameWithType: Core
+- uid: Core.Class1
+  name: Class1
+  href: api/Core.Class1.html
+  commentId: T:Core.Class1
+  fullName: Core.Class1
+  nameWithType: Class1
+- uid: Data
+  name: Data
+  href: api/Data.html
+  commentId: N:Data
+  fullName: Data
+  nameWithType: Data
+- uid: Data.Class1
+  name: Class1
+  href: api/Data.Class1.html
+  commentId: T:Data.Class1
+  fullName: Data.Class1
+  nameWithType: Class1
