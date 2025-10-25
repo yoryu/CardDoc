@@ -23,7 +23,8 @@ jobs:
         with:
           repository: yoryu/CardNet
           path: CardNet
-          # If CardNet is private, set token: ${{ secrets.PERSONAL_TOKEN }}
+          # If CardNet is private, use a PAT stored as a repository secret named PERSONAL_ACCESS_TOKEN
+          token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
