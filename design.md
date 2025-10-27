@@ -93,11 +93,12 @@ HTTP API 概要（端点说明，文字）
 变更记录
 - 2025-10-25 初始设计文档（此版本：删除所有示例代码片段与 Mermaid 区块，统一为纯文本说明，修复未闭合代码块问题）。
 
-![架构图](diagrams/architecture.svg)
+![架构图](images/architecture.svg)
 
 ### 创建流程图
-![创建流程图](diagrams/sequence_create.svg)
+![创建流程图](images/sequence_create.svg)
 
 ### 读取流程图
-![读取流程图](diagrams/sequence_read.svg)
+![读取流程图](images/sequence_read.svg)
+
 
