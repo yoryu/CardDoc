@@ -1,0 +1,142 @@
+openapi: 3.0.3
+info:
+  title: Cardinn Generic Data API
+  version: "1.0.0"
+  description: Generic CRUD API for JSON-first data (GenericData schema)
+servers:
+  - url: /v1
+paths:
+  /{type}:
+    post:
+      summary: Create a document of type {type}
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericData'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+  /{type}/{id}:
+    get:
+      summary: Read a document by id
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericData'
+        '404':
+          description: Not Found
+    put:
+      summary: Replace a document by id
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GenericData'
+      responses:
+        '200':
+          description: Updated
+    delete:
+      summary: Delete a document by id
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: No Content
+  /{type}/query:
+    post:
+      summary: Query documents of a type with a JSON query payload
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: Adapter-defined query syntax (filter/pagination/sort)
+      responses:
+        '200':
+          description: Query results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/GenericData'
+components:
+  schemas:
+    GenericData:
+      type: object
+      required:
+        - id
+        - type
+      properties:
+        id:
+          type: string
+          description: Unique identifier
+        type:
+          type: string
+          description: Logical type name (e.g., Card)
+        metadata:
+          type: object
+          description: Arbitrary metadata (createdBy, createdAt, tags, etc.)
+          additionalProperties: true
+        payload:
+          type: object
+          description: Business payload (arbitrary JSON)
+          additionalProperties: true
+      additionalProperties: true

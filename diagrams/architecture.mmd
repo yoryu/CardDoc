@@ -1,0 +1,8 @@
+﻿flowchart LR
+  Client -->|HTTP/gRPC| ApiLayer["API Layer"]
+  ApiLayer --> CoreService["Core CRUD Service"]
+  CoreService -->|calls| StorageAdapter1["IStorageAdapter (SQL)"]
+  CoreService -->|calls| StorageAdapter2["IStorageAdapter (Mongo)"]
+  StorageAdapter1 --> SQLDB[(SQL DB)]
+  StorageAdapter2 --> MongoDB[(Mongo DB)]
+  CoreService --> Audit["Audit/Logging"]
