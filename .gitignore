@@ -27,5 +27,8 @@ dist/
 # Ignore ASP.NET publish/wwwroot folders
 **/wwwroot/
 wwwroot/
-# Ignore DocFX generated site
+# Ignore DocFX
+/_assets/
 /_site/
+/_scripts/
+/index.md

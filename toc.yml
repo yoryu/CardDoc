@@ -1,5 +1,5 @@
-﻿- name: 主页
-  href: index.md
+﻿- name: 概要
+  href: HLD/
 
-- name: 设计说明
-  href: design.md
+- name: DocNet
+  href: DocNet/
